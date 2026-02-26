@@ -1,0 +1,289 @@
+<!-- /index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="EN BRUTO — Antes de la obra." />
+  <title>EN BRUTO</title>
+
+  <style>
+    :root {
+      --black:#000000;
+      --white:#ffffff;
+      --yellow:#FFC107;
+      --line:rgba(255,255,255,.22);
+      --radius:6px;
+      --max:760px;
+      --logoSize: 190px;
+      --logoOpticalX: 30px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background: var(--black);
+      color: var(--white);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:56px 18px 70px;
+    }
+
+    .card{ width:min(var(--max), 100%); text-align:center; }
+
+    .logo{
+      width: var(--logoSize);
+      height: var(--logoSize);
+      margin: 0 auto 26px;
+      display:grid;
+      place-items:center;
+      filter: drop-shadow(0 22px 55px rgba(0,0,0,.7));
+    }
+
+    .logo img{
+      width: var(--logoSize);
+      height: var(--logoSize);
+      object-fit:contain;
+      display:block;
+      transform: translateX(var(--logoOpticalX));
+      filter: invert(1) brightness(1.12) contrast(1.06);
+    }
+
+    .t1{
+      margin:0;
+      font-size: clamp(28px, 4.5vw, 46px);
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+    }
+
+    .bar{
+      width: min(560px, 94%);
+      height: 14px;
+      margin: 18px auto 10px;
+      background: var(--yellow);
+    }
+
+    .t2{
+      margin:0;
+      font-size: clamp(54px, 9vw, 94px);
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.58);
+    }
+
+    .meas{
+      margin: 46px 0 40px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.74);
+      font-size: 15px;
+    }
+
+    form{
+      width: min(720px, 100%);
+      margin: 0 auto;
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap: 18px;
+    }
+
+    label{
+      display:block;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.88);
+    }
+
+    .req{ color: var(--yellow); }
+
+    input{
+      width:100%;
+      margin-top: 10px;
+      padding: 16px 14px;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      outline: none;
+      font-size: 16px;
+      letter-spacing: .02em;
+      transition: border-color .15s ease;
+    }
+
+    input::placeholder{ color: rgba(255,255,255,.35); }
+    input:focus{ border-color: var(--yellow); }
+
+    .checkrow{
+      display:flex;
+      align-items:flex-start;
+      gap: 12px;
+      padding-top: 2px;
+      user-select:none;
+    }
+
+    .checkrow input{
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+      accent-color: var(--yellow);
+    }
+
+    .checkrow span{
+      color: rgba(255,255,255,.76);
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.25;
+    }
+
+    .btn{
+      margin-top: 4px;
+      padding: 16px 14px;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--yellow);
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 16px;
+      transition: background .15s ease, color .15s ease;
+    }
+
+    .btn:hover{
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .fine{
+      margin: 4px 0 0;
+      color: rgba(255,255,255,.45);
+      font-weight: 650;
+      letter-spacing: .04em;
+      font-size: 13px;
+      text-align:center;
+    }
+
+    .status{
+      min-height: 18px;
+      text-align:center;
+      font-weight: 700;
+      font-size: 13px;
+      color: rgba(255,255,255,.65);
+    }
+    .status.ok{ color: rgba(46,229,157,.9); }
+    .status.err{ color: #ff5a5a; }
+
+    @media (max-width:520px){
+      :root{ --logoSize: 170px; }
+      .bar{ height: 12px; }
+      .meas{ margin-top: 40px; }
+      .logo img{ transform: translateX(calc(var(--logoOpticalX) * 0.9)); }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Landing">
+      <div class="logo" aria-label="Isologo">
+        <img src="assets/isologo.png" alt="EN BRUTO" />
+      </div>
+
+      <h1 class="t1">ANTES DE LA OBRA</h1>
+      <div class="bar" aria-hidden="true"></div>
+      <h2 class="t2">EN BRUTO</h2>
+
+      <div class="meas">A3 · A2 · A1</div>
+
+      <form id="lead-form" novalidate>
+        <div>
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
+        </div>
+
+        <div>
+          <label for="studio">Estudio / Empresa <span class="req">*</span></label>
+          <input id="studio" name="studio" type="text" autocomplete="organization" placeholder="Nombre del estudio" required />
+        </div>
+
+        <div>
+          <label for="igweb">Instagram / Web <span style="color:rgba(255,255,255,.55)">(Opcional)</span></label>
+          <input id="igweb" name="igweb" type="text" autocomplete="url" placeholder="@usuario o https://tuweb.com" />
+        </div>
+
+        <label class="checkrow">
+          <input id="pro-check" type="checkbox" required />
+          <span>Soy estudio de arquitectura / construcción</span>
+        </label>
+
+        <button class="btn" type="submit">Sumarme</button>
+
+        <div class="fine">Solo estudios y profesionales. Sin spam.</div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC-PBEyCnRm_hH6Rdp_GEPAGU_zmr_vsbjWAiWr-aBIhtQDeJ1zWaHk-C-CVU0JQjA/exec';
+
+    const form = document.getElementById("lead-form");
+    const statusEl = document.getElementById("status");
+
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg || "";
+      statusEl.className = "status" + (kind ? " " + kind : "");
+    }
+
+    function isValidEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const studio = document.getElementById("studio").value.trim();
+      const igweb = document.getElementById("igweb").value.trim();
+      const checked = document.getElementById("pro-check").checked;
+
+      if (!email || !isValidEmail(email)) return setStatus("Revisá el email.", "err");
+      if (!studio) return setStatus("Completá el estudio/empresa.", "err");
+      if (!checked) return setStatus("Confirmá que sos estudio/profesional.", "err");
+
+      setStatus("Enviando…");
+
+      const payload = { email, studio, igweb, qualified: true, source: window.location.href };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        form.reset();
+        setStatus("Listo.", "ok");
+      } catch (err) {
+        setStatus("No se pudo enviar. Probá de nuevo.", "err");
+      }
+    });
+  </script>
+</body>
+</html>
